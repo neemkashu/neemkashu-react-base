@@ -1,11 +1,33 @@
+:root {
+  --font-size-large: 3.2rem;
+  --font-size-medium: 2.0rem;
+
+  --widget-padding: 24px 32px;
+
+  --color-light: #ffffff;
+  --gray-1: #333;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
 
-html,
+h1 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
 body {
+  position: relative;
   max-width: 100vw;
-  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+html {
+  font-size: 10px;
 }
