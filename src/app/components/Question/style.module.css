@@ -1,0 +1,9 @@
+.question {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: var(--gap-1);
+  padding: var(--padding-1);
+  font-size: var(--font-size-1);
+  background-color: var(--color-light);
+}
