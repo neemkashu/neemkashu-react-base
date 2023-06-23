@@ -1,8 +1,8 @@
 import { Footer } from "./Layouts/Footer/Footer";
 import { Header } from "./Layouts/Header/Header";
+import { Wrapper } from "./components/containers/Wrapper/Wrapper";
 import "./globals.css";
 import { Roboto } from "next/font/google";
-import styles from "./style.module.css";
 
 const roboto = Roboto({ weight: ["500", "700"], subsets: ["cyrillic"] });
 
@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={roboto.className}>
         <Header />
-        <div className={styles.wrapper}>{children}</div>
+        <Wrapper>{children}</Wrapper>
         <Footer />
       </body>
     </html>

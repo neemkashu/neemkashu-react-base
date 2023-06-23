@@ -1,0 +1,11 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-2);
+  padding: var(--padding-1);
+  color: var(--color-ligth);
+  background-color: var(--color-light);
+}
+.wrapper__grow {
+  flex-grow: 2;
+}
