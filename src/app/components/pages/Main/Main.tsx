@@ -30,11 +30,11 @@ export default function Main() {
       <WrapperCard>
         <FilterList />
       </WrapperCard>
-      <WrapperCard isGrow>
+      <div className={styles.list}>
         {FilmsMock.map(({ title, genre, image, id }) => (
           <FilmCard key={id} title={title} image={image} genre={genre} />
         ))}
-      </WrapperCard>
+      </div>
     </div>
   );
 }

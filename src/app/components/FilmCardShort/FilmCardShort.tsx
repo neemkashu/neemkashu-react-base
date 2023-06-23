@@ -1,6 +1,7 @@
 import { FC } from "react";
 import Image from "next/image";
 import styles from "./style.module.css";
+import { CountController } from "../CountController/CountController";
 
 type FilmProps = {
   title: string;
@@ -16,6 +17,7 @@ export const FilmCard: FC<FilmProps> = ({ title, genre, image }) => {
         <span className={styles.title}>{title}</span>
         <span className={styles.genre}>{genre}</span>
       </div>
+      <CountController />
     </div>
   );
 };
