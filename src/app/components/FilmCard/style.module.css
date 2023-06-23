@@ -1,0 +1,35 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: var(--gap-4);
+  padding: var(--padding-1);
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  gap: var(--gap-4);
+}
+.wrapper-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: var(--font-size-large);
+  font-weight: 600;
+  line-height: 32px;
+}
+.wrapper-description {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-1);
+}
+.description-field {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 32px;
+}
+.description-info {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
