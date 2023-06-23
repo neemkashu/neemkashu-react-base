@@ -1,7 +1,8 @@
 :root {
   --font-size-large: 3.2rem;
   --font-size-medium: 2.0rem;
-  --font-size-1: 24px;
+  --font-size-1: 2.4rem;
+  --font-size-2: 1.6rem;
 
   --widget-padding: 24px 32px;
   --gap-1: 16px;

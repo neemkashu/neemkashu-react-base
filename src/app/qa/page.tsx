@@ -4,7 +4,7 @@ import styles from "./style.module.css";
 
 export default function QAPage() {
   return (
-    <div className={styles.wrapper}>
+    <>
       <div className={styles.question}>Вопросы-ответы</div>
       <ul className={styles.list}>
         {QuestionConfig.map(({ question, answer }) => {
@@ -15,6 +15,6 @@ export default function QAPage() {
           );
         })}
       </ul>
-    </div>
+    </>
   );
 }

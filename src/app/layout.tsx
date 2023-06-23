@@ -2,8 +2,9 @@ import { Footer } from "./Layouts/Footer/Footer";
 import { Header } from "./Layouts/Header/Header";
 import "./globals.css";
 import { Roboto } from "next/font/google";
+import styles from "./style.module.css";
 
-const roboto = Roboto({ weight: "700", subsets: ["cyrillic"] });
+const roboto = Roboto({ weight: ["500", "700"], subsets: ["cyrillic"] });
 
 export const metadata = {
   title: "Create Next App",
@@ -19,7 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={roboto.className}>
         <Header />
-        {children}
+        <div className={styles.wrapper}>{children}</div>
         <Footer />
       </body>
     </html>

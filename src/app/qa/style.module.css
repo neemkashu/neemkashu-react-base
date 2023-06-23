@@ -5,13 +5,6 @@
   font-weight: 600;
   background-color: var(--color-light);
 }
-.wrapper {
-  flex-grow: 2;
-  display: flex;
-  flex-direction: column;
-  gap: var(--gap-2);
-  padding: var(--widget-padding);
-}
 .list {
   display: flex;
   flex-direction: column;
