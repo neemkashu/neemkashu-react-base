@@ -7,6 +7,7 @@
   --gap-1: 16px;
   --gap-2: 24px;
   --padding-1: 24px;
+  --icon-height: 32px;
 
   --color-light: #ffffff;
   --gray-1: #333;
@@ -46,4 +47,8 @@ a {
 
 ul {
   list-style: none;
+}
+
+button {
+  border: 0;
 }

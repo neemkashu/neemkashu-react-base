@@ -7,3 +7,7 @@
   font-size: var(--font-size-1);
   background-color: var(--color-light);
 }
+.button {
+  height: var(--icon-height);
+  background-color: transparent;
+}

@@ -1,6 +1,6 @@
 .question {
   font-size: var(--font-size-large);
-  padding: var(--widget-padding);
+  padding: var(--padding-1);
   color: var(--text-primary);
   font-weight: 600;
   background-color: var(--color-light);
