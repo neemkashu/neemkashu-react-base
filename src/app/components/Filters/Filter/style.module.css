@@ -6,7 +6,6 @@
 }
 .label {
   font-size: var(--font-size-3);
-  font-family: SF Pro Text, Arial;
   line-height: 20px;
 }
 .input {

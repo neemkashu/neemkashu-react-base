@@ -1,3 +1,4 @@
+import { Providers } from "../redux/providers/providers";
 import { Footer } from "./Layouts/Footer/Footer";
 import { Header } from "./Layouts/Header/Header";
 import { Wrapper } from "./components/containers/Wrapper/Wrapper";
@@ -19,9 +20,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={roboto.className}>
-        <Header />
-        <Wrapper>{children}</Wrapper>
-        <Footer />
+        <Providers>
+          <Header />
+          <Wrapper>{children}</Wrapper>
+          <Footer />
+        </Providers>
       </body>
     </html>
   );

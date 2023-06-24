@@ -5,14 +5,14 @@ import {
   reactHooksModule,
 } from "@reduxjs/toolkit/query/react";
 
-const ORIGIN = "localhost:3001/";
+const ORIGIN = "http://localhost:3001/api";
 
 const createApi = buildCreateApi(
   coreModule(),
   reactHooksModule({ unstable__sideEffectsInRender: true })
 );
 
-interface FilmResponse {
+export interface FilmResponse {
   title: string;
   posterUrl: string;
   releaseYear: number;
@@ -40,4 +40,4 @@ export const filmApi = createApi({
   }),
 });
 
-export const { useLazyGetFilmsQuery } = filmApi;
+export const { useGetFilmsQuery } = filmApi;

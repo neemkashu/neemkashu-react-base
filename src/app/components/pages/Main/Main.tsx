@@ -1,3 +1,6 @@
+"use client";
+
+import { useGetFilmsQuery } from "../../../../redux/films/filmApi";
 import { WrapperCard } from "../../containers/WrapperCard/WrapperCard";
 import { FilmCard } from "../../FilmCardShort/FilmCardShort";
 import { FilterList } from "../../Filters/FilterList";
@@ -25,6 +28,9 @@ const FilmsMock = [
 ];
 
 export default function Main() {
+  const { data, isLoading } = useGetFilmsQuery();
+  console.log("data", data);
+
   return (
     <div className={styles.main}>
       <WrapperCard>
