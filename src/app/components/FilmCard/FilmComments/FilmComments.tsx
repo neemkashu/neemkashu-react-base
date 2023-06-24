@@ -1,10 +1,6 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 import styles from "./style.module.css";
 
-type CommentProps = {
-  comments: string;
-};
-
-export const FilmComments: FC<CommentProps> = ({ comments }) => {
-  return <div className={styles.wrapper}>{comments}</div>;
+export const FilmComments: FC<PropsWithChildren> = ({ children }) => {
+  return <div className={styles.wrapper}>{children}</div>;
 };
