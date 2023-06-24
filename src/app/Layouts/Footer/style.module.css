@@ -1,5 +1,5 @@
 .footer {
-  font-size: var(--font-size-medium);
+  font-size: var(--font-size-20);
   color: var(--color-light);
   display: flex;
   max-width: 1920px;

@@ -1,16 +1,16 @@
 :root {
-  --font-size-large: 3.2rem;
-  --font-size-medium: 2.0rem;
-  --font-size-1: 2.4rem;
-  --font-size-2: 1.6rem;
-  --font-size-3: 1.4rem;
+  --font-size-32: 3.2rem;
+  --font-size-20: 2.0rem;
+  --font-size-24: 2.4rem;
+  --font-size-16: 1.6rem;
+  --font-size-14: 1.4rem;
 
   --widget-padding: 24px 32px;
   --gap-16: 16px;
   --gap-24: 24px;
   --gap-20: 20px;
   --gap-32: 32px;
-  --padding-1: 24px;
+  --padding-24: 24px;
   --icon-height: 32px;
 
   --color-light: #ffffff;

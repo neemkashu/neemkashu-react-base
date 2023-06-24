@@ -3,7 +3,7 @@
   flex-direction: row;
   justify-content: space-between;
   gap: var(--gap-16);
-  padding: var(--padding-1);
-  font-size: var(--font-size-1);
+  padding: var(--padding-24);
+  font-size: var(--font-size-24);
   background-color: var(--color-light);
 }
