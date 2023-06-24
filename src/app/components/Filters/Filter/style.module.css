@@ -1,4 +1,5 @@
 .filter {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 4px;
@@ -17,4 +18,9 @@
 }
 .input:focus-visible {
   border-color: var(--color-accent);
+}
+.relative {
+  position: absolute;
+  right: 16px;
+  bottom: 5px;
 }
