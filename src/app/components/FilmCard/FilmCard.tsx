@@ -4,6 +4,14 @@ import { FilmInfo } from "./FilmInfo/FilmInfo";
 import { FilmComments } from "./FilmComments/FilmComments";
 import { Comment } from "./Comment/Comment";
 
+type CommentType = {
+  id: string;
+  name: string;
+  image: string;
+  rating: string;
+  description: string;
+};
+
 type FilmProps = {
   details: {
     title: string;
@@ -14,12 +22,7 @@ type FilmProps = {
     director: string;
     description: string;
   };
-  comments: {
-    name: string;
-    image: string;
-    rating: string;
-    description: string;
-  };
+  comments: CommentType[];
 };
 
 export const FilmCard: FC<FilmProps> = ({ details, comments }) => {
@@ -27,7 +30,9 @@ export const FilmCard: FC<FilmProps> = ({ details, comments }) => {
     <div className={styles.wrapper}>
       <FilmInfo {...details} />
       <FilmComments>
-        <Comment {...comments}></Comment>
+        {comments.map((comment) => (
+          <Comment key={comment.id} {...comment}></Comment>
+        ))}
       </FilmComments>
     </div>
   );
