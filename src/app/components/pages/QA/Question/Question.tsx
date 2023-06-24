@@ -1,17 +1,16 @@
-import { FC } from "react";
-import styles from "./style.module.css";
-import Image from "next/image";
-import { QuestionProps } from "../../../../../utils/types";
+"use client";
 
-const ARROW_ALT = "посмотреть ответ";
+import { FC, useState } from "react";
+import styles from "./style.module.css";
+import { QuestionProps } from "../../../../../utils/types";
+import { DropButton } from "../../../DropButton/DropButton";
 
 export const Question: FC<QuestionProps> = ({ question, answer }) => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <div className={styles.question}>
       <p>{question}</p>
-      <button className={styles.button}>
-        <Image src={"/arrow.svg"} alt={ARROW_ALT} width={32} height={32} />
-      </button>
+      <DropButton handler={() => setIsOpen(!isOpen)} />
     </div>
   );
 };
