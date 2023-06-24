@@ -1,7 +1,7 @@
 import { FC } from "react";
 import styles from "./style.module.css";
 import Image from "next/image";
-import { QuestionProps } from "../../utils/types";
+import { QuestionProps } from "../../../../../utils/types";
 
 const ARROW_ALT = "посмотреть ответ";
 

@@ -1,20 +1,5 @@
-import { Question } from "../components/Question/Question";
-import { QuestionConfig } from "../utils/constants";
-import styles from "./style.module.css";
+import QA from "../components/pages/QA/QA";
 
 export default function QAPage() {
-  return (
-    <>
-      <div className={styles.question}>Вопросы-ответы</div>
-      <ul className={styles.list}>
-        {QuestionConfig.map(({ question, answer }) => {
-          return (
-            <li key={question}>
-              <Question question={question} answer={answer} />
-            </li>
-          );
-        })}
-      </ul>
-    </>
-  );
+  return <QA />;
 }
