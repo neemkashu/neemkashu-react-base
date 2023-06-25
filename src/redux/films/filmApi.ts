@@ -30,7 +30,7 @@ export const filmApi = createApi({
     baseUrl: ORIGIN,
   }),
   endpoints: ({ query }) => ({
-    getFilms: query<FilmResponse, void>({
+    getFilms: query<FilmResponse[], void>({
       query: () => ({
         url: "/movies",
         method: "GET",

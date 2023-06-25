@@ -3,6 +3,7 @@
 import { useGetFilmsQuery } from "../../../../redux/films/filmApi";
 import { WrapperCard } from "../../containers/WrapperCard/WrapperCard";
 import { FilmCard } from "../../FilmCardShort/FilmCardShort";
+import { FilmList } from "../../FilmList/FilmList";
 import { FilterList } from "../../Filters/FilterList";
 import styles from "./style.module.css";
 
@@ -28,18 +29,13 @@ const FilmsMock = [
 ];
 
 export default function Main() {
-  const { data, isLoading } = useGetFilmsQuery();
-  console.log("data", data);
-
   return (
     <div className={styles.main}>
       <WrapperCard>
         <FilterList />
       </WrapperCard>
       <div className={styles.list}>
-        {FilmsMock.map(({ title, genre, image, id }) => (
-          <FilmCard key={id} title={title} image={image} genre={genre} />
-        ))}
+        <FilmList />
       </div>
     </div>
   );
