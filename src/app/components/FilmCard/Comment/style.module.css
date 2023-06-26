@@ -9,6 +9,7 @@
   flex-direction: column;
   align-self: flex-start;
   gap: var(--gap-16);
+  flex-grow: 1;
 }
 .wrapper-title {
   display: flex;

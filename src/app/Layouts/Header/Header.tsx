@@ -4,8 +4,8 @@ import { FC } from "react";
 import styles from "./style.module.css";
 import Image from "next/image";
 import Link from "next/link";
-import { useAppSelector } from "../../../redux/hooks";
-import { useGetFilmsQuery } from "../../../redux/films/filmApi";
+import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
+import { filmApi, useGetFilmsQuery } from "../../../redux/films/filmApi";
 import { TotalAmountSelector } from "../../../redux/selectors";
 
 const BACKET_ALT = "перейти к корзине";
@@ -16,7 +16,9 @@ const LINKS = {
 
 export const Header: FC = () => {
   // TODO: start films query in separate wrapper
-  const { data } = useGetFilmsQuery();
+  const dispatch = useAppDispatch();
+  dispatch(filmApi.endpoints.getFilms.initiate());
+  // const { data } = useGetFilmsQuery();
   const totalFilmInCart = useAppSelector(TotalAmountSelector);
   return (
     <header className={styles.header}>

@@ -2,9 +2,8 @@
 
 import { FC } from "react";
 import styles from "./style.module.css";
-import { FilmCard } from "../../FilmCardShort/FilmCardShort";
+import { FilmCardShort } from "../../FilmCardShort/FilmCardShort";
 import { useCartFilms } from "./hooks";
-import { useAppSelector } from "../../../../redux/hooks";
 import { TotalCart } from "./TotalCart/TotalCart";
 
 export const Cart: FC = () => {
@@ -18,7 +17,7 @@ export const Cart: FC = () => {
             if (!film) return null;
             const { id, title, posterUrl, genre } = film;
             return (
-              <FilmCard
+              <FilmCardShort
                 key={id}
                 id={id}
                 title={title}

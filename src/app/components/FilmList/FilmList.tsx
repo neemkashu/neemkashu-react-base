@@ -1,7 +1,7 @@
 "use client";
 
 import { FC } from "react";
-import { FilmCard } from "../FilmCardShort/FilmCardShort";
+import { FilmCardShort } from "../FilmCardShort/FilmCardShort";
 import { useFilteredFilms } from "../Filters/hooks/hooks";
 import styles from "./style.module.css";
 
@@ -15,7 +15,7 @@ export const FilmList: FC = () => {
   return (
     <>
       {data.map(({ title, genre, posterUrl, id }) => (
-        <FilmCard
+        <FilmCardShort
           key={id}
           id={id}
           title={title}

@@ -30,6 +30,14 @@ export interface CinemaResponse {
   movieIds: string[];
 }
 
+export interface ReviewResponse {
+  id: string;
+  name: string;
+  text: string;
+  rating: number;
+  image?: string;
+}
+
 export const filmApi = createApi({
   reducerPath: "filmApi",
   baseQuery: fetchBaseQuery({
@@ -51,15 +59,22 @@ export const filmApi = createApi({
       keepUnusedDataFor: 3600,
     }),
     getMoviesOfCinema: query<FilmResponse[], { id: string }>({
-      query: (id) => ({
+      query: ({ id }) => ({
         url: `/movies?cinemaId=${id}`,
         method: "GET",
       }),
       keepUnusedDataFor: 3600,
     }),
-    getMovieById: query<FilmResponse[], { id: string }>({
+    getMovieById: query<FilmResponse, string>({
       query: (id) => ({
-        url: `/movies?movieId=${id}`,
+        url: `/movie?movieId=${id}`,
+        method: "GET",
+      }),
+      keepUnusedDataFor: 3600,
+    }),
+    getReviewsById: query<ReviewResponse[], string>({
+      query: (id) => ({
+        url: `/reviews?movieId=${id}`,
         method: "GET",
       }),
       keepUnusedDataFor: 3600,
@@ -72,4 +87,5 @@ export const {
   useGetCinemasQuery,
   useGetMoviesOfCinemaQuery,
   useGetMovieByIdQuery,
+  useGetReviewsByIdQuery,
 } = filmApi;

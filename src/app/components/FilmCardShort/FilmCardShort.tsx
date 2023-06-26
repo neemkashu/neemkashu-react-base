@@ -5,7 +5,7 @@ import { CountController } from "../CountController/CountController";
 import { FilmResponse } from "../../../redux/films/filmApi";
 import Link from "next/link";
 
-export const FilmCard: FC<
+export const FilmCardShort: FC<
   Pick<FilmResponse, "title" | "genre" | "posterUrl" | "id">
 > = ({ title, genre, posterUrl: image, id }) => {
   return (

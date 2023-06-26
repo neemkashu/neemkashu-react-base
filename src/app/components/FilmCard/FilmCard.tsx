@@ -1,30 +1,18 @@
+"use client";
+
 import { FC } from "react";
 import styles from "./style.module.css";
 import { FilmInfo } from "./FilmInfo/FilmInfo";
-import { Comment } from "./Comment/Comment";
 import { FilmResponse } from "../../../redux/films/filmApi";
+import { CommentList } from "./Comment/CommentList";
 
-type CommentType = {
-  id: string;
-  name: string;
-  image: string;
-  rating: string;
-  description: string;
-};
-
-type FilmProps = {
-  details: FilmResponse;
-  comments: CommentType[];
-};
-
-export const FilmCard: FC<FilmProps> = ({ details, comments }) => {
+export const FilmCard: FC<FilmResponse> = (details) => {
+  const { id } = details;
   return (
     <div className={styles.wrapper}>
       <FilmInfo {...details} />
       <div className={styles.wrapper}>
-        {comments.map((comment) => (
-          <Comment key={comment.id} {...comment}></Comment>
-        ))}
+        <CommentList filmId={id} />
       </div>
     </div>
   );

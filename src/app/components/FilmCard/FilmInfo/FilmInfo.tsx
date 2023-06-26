@@ -25,7 +25,7 @@ export const FilmInfo: FC<FilmResponse> = ({
         </div>
         <InfoField field="Жанр" value={genre} />
         <InfoField field="Год выпуска" value={`${releaseYear}`} />
-        <InfoField field="Рейтинг" value={`${rating}`} />
+        <InfoField field="Рейтинг" value={`${Math.round(rating)}`} />
         <InfoField field="Режиссёр" value={director} />
         <div className={styles["wrapper-description"]}>
           <span className={styles["description-field"]}>Описание</span>
