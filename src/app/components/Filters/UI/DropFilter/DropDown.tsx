@@ -7,8 +7,11 @@ import { DropButton } from "../../../DropButton/DropButton";
 import { RadioList } from "./RadioList/RadioList";
 import { useDropDownContext } from "./DropFilter";
 import { useAppDispatch } from "../../../../../redux/hooks";
-import { updateGenre } from "../../../../../redux/filters/filtersSlice";
-import { Dictionary } from "../../../../../dictionary/dictionary";
+import {
+  updateGenre,
+  updateCinema,
+} from "../../../../../redux/filters/filtersSlice";
+import { FilterFields } from "../../../../../utils/constants";
 
 export const DropDown: FC = () => {
   const { chosenValue, setChosenValue, name } = useDropDownContext();
@@ -44,7 +47,10 @@ export const DropDown: FC = () => {
       {isOpen ? (
         <RadioList
           handler={(newValue: string) => {
-            dispatch(updateGenre(newValue === uncheckValue ? "" : newValue));
+            if (name === FilterFields.genre.view)
+              dispatch(updateGenre(newValue === uncheckValue ? "" : newValue));
+            if (name === FilterFields.cinema.view)
+              dispatch(updateCinema(newValue === uncheckValue ? "" : newValue));
             setChosenValue && setChosenValue(newValue);
           }}
         />

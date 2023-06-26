@@ -11,9 +11,12 @@ import {
 } from "react";
 import { DropDown } from "./DropDown";
 import { useAppDispatch } from "../../../../../redux/hooks";
+import { FilterFields } from "../../../../../utils/constants";
+
+type FilterNames = (typeof FilterFields)[keyof typeof FilterFields]["view"];
 
 type DropDownContextType = {
-  name: string;
+  name: FilterNames | "";
   list: string[];
   chosenValue: string;
   setChosenValue: Dispatch<SetStateAction<string>> | null;
@@ -57,7 +60,7 @@ export const useDropDownContext = (): DropDownContextType => {
   return context;
 };
 
-export const DropDownFilter: FC<{ name: string; list: string[] }> = ({
+export const DropDownFilter: FC<{ name: FilterNames; list: string[] }> = ({
   name: nameInitial,
   list: listInitial,
 }) => {

@@ -6,7 +6,6 @@ import { useFilteredFilms } from "../Filters/hooks/hooks";
 
 export const FilmList: FC = () => {
   const { data, isLoading } = useFilteredFilms();
-  console.log("data", data);
 
   if (isLoading) return <span>Loading</span>;
   if (!data) return <span>No film was found</span>;

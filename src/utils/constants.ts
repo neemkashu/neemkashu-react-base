@@ -22,3 +22,14 @@ export const QuestionConfig: Readonly<Readonly<QuestionProps>[]> = [
       "Мы — крупнейший сервис о кино в рунете. На нем вы сможете посмотреть фильмы и сериалы, купить билеты в кино, узнать рейтинги популярных видео и интересные факты, поставить фильмам оценки, написать рецензии и дополнить описание фильмов.",
   },
 ] as const;
+
+export const FilterFields = {
+  genre: {
+    name: "genre",
+    view: "Жанр",
+  },
+  cinema: {
+    name: "cinema",
+    view: "Кинотеатр",
+  },
+} as const;

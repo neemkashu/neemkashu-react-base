@@ -1,8 +1,6 @@
 "use client";
 
-import { useGetFilmsQuery } from "../../../../redux/films/filmApi";
 import { WrapperCard } from "../../containers/WrapperCard/WrapperCard";
-import { FilmCard } from "../../FilmCardShort/FilmCardShort";
 import { FilmList } from "../../FilmList/FilmList";
 import { FilterList } from "../../Filters/FilterList";
 import styles from "./style.module.css";
