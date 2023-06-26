@@ -11,10 +11,6 @@ export const SearchFilter: FC = () => {
   const dispatch = useAppDispatch();
   console.log("searchQuery", searchQuery);
 
-  const applyTextFilter = (text: string) => {
-    dispatch(updateSearchText(text));
-  };
-
   return (
     <TypeFilter
       name={SearchConfig.name}
