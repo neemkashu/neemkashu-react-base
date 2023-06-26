@@ -11,7 +11,7 @@ export const cartSlice = createSlice({
     increaseFilmById(state, action: PayloadAction<{ id: string }>) {
       const id = action.payload.id;
       const filmIndex = state.findIndex((film) => film.id === id);
-      if (filmIndex !== -1) {
+      if (filmIndex !== -1 && state[filmIndex].amount < 30) {
         state[filmIndex].amount += 1;
       } else {
         state.push({ id, amount: 1 });

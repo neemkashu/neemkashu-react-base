@@ -5,14 +5,17 @@ import styles from "./style.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import { useAppSelector } from "../../../redux/hooks";
+import { useGetFilmsQuery } from "../../../redux/films/filmApi";
 
 const BACKET_ALT = "перейти к корзине";
 const LINKS = {
   main: "./",
-  basket: "./basket",
+  basket: "./cart",
 };
 
 export const Header: FC = () => {
+  // TODO: start films query in separate wrapper
+  const { data } = useGetFilmsQuery();
   const totalFilmInCart = useAppSelector((store) =>
     store.cart.reduce((accum, item) => (accum += item.amount), 0)
   );
