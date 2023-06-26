@@ -1,11 +1,11 @@
 "use client";
 
 import { FC, useRef } from "react";
-import { useGetReviewsByIdQuery } from "../../../../redux/films/filmApi";
 import { Comment } from "./Comment";
+import { useComments } from "./hooks";
 
 export const CommentList: FC<{ filmId: string }> = ({ filmId }) => {
-  const { data: comments, isLoading, isError } = useGetReviewsByIdQuery(filmId);
+  const { comments, isError, isLoading } = useComments(filmId);
 
   console.log("comments", { comments }, { filmId }, { isLoading });
 
