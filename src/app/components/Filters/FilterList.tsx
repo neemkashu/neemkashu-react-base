@@ -3,6 +3,7 @@ import styles from "./style.module.css";
 import { DropDown } from "./UI/DropFilter/DropDown";
 import { SearchFilter } from "./SearchFilter/SearchFilter";
 import { Dictionary } from "../../../dictionary/dictionary";
+import { DropDownFilter } from "./UI/DropFilter/DropFilter";
 
 const GenreList = Object.values(Dictionary.GENRES);
 
@@ -11,8 +12,8 @@ export const FilterList: FC = () => {
     <div className={styles.filters}>
       <h2>Фильтры поиска</h2>
       <SearchFilter />
-      <DropDown name={"Жанр"} list={GenreList} />
-      <DropDown name={"Кинотеатр"} list={GenreList} />
+      <DropDownFilter name={"Жанр"} list={GenreList} />
+      <DropDownFilter name={"Кинотеатр"} list={GenreList} />
     </div>
   );
 };

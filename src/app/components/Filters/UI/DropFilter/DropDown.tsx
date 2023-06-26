@@ -5,16 +5,14 @@ import styles from "../style.module.css";
 import classNames from "classnames";
 import { DropButton } from "../../../DropButton/DropButton";
 import { RadioList } from "./RadioList/RadioList";
+import { useDropDownContext } from "./DropFilter";
 
-export const DropDown: FC<{ name: string; list: string[] }> = ({
-  name,
-  list,
-}) => {
+export const DropDown: FC = () => {
+  const { chosenValue, setChosenValue, name } = useDropDownContext();
+
   const defaultValue = `Выберете ${name.toLowerCase()}`;
   const uncheckValue = "Не выбран";
   const [isOpen, setIsOpen] = useState(false);
-  const [value, setValue] = useState(defaultValue);
-  const showList = [uncheckValue, ...list];
 
   return (
     <>
@@ -25,7 +23,7 @@ export const DropDown: FC<{ name: string; list: string[] }> = ({
         <input
           className={classNames(styles.input, styles.label)}
           id={name}
-          value={value === uncheckValue ? defaultValue : value}
+          value={chosenValue === uncheckValue ? defaultValue : chosenValue}
           type="text"
           placeholder={defaultValue}
           readOnly
@@ -41,10 +39,9 @@ export const DropDown: FC<{ name: string; list: string[] }> = ({
       </div>
       {isOpen ? (
         <RadioList
-          value={value}
-          handler={(newValue: string) => setValue(newValue)}
-          name={name}
-          list={showList}
+          handler={(newValue: string) => {
+            setChosenValue && setChosenValue(newValue);
+          }}
         />
       ) : null}
     </>

@@ -1,14 +1,13 @@
 "use client";
 
-import { FC, useId, useState } from "react";
+import { FC } from "react";
 import styles from "./style.module.css";
+import { useDropDownContext } from "../DropFilter";
 
 export const RadioList: FC<{
-  list: string[];
-  name: string;
-  value: string;
   handler: (newValue: string) => void;
-}> = ({ list, name, value, handler }) => {
+}> = ({ handler }) => {
+  const { chosenValue, name, list } = useDropDownContext();
   return (
     <div>
       {list.map((item) => {
@@ -21,7 +20,7 @@ export const RadioList: FC<{
               id={id}
               value={item}
               name={name}
-              checked={value === item}
+              checked={chosenValue === item}
             ></input>
             <label htmlFor={id}>{item}</label>
           </div>
