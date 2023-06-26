@@ -16,7 +16,10 @@ export const Header: FC = () => {
         <h1>Билетопоиск</h1>
       </Link>
       <Link href={LINKS.basket}>
-        <Image src={"/basket.svg"} alt={BACKET_ALT} width={32} height={32} />
+        <div className={styles.cart}>
+          <div className={styles["cart-box"]}>{"0"}</div>
+          <Image src={"/basket.svg"} alt={BACKET_ALT} width={32} height={32} />
+        </div>
       </Link>
     </header>
   );

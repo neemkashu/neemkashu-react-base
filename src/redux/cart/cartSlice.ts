@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { FilmResponse } from "../films/filmApi";
 
 type CartSliceState = { id: string; amount: number };
 
@@ -11,7 +10,6 @@ export const cartSlice = createSlice({
   reducers: {
     increaseFilmById(state, action: PayloadAction<{ id: string }>) {
       const id = action.payload.id;
-      console.log("id", id);
       const filmIndex = state.findIndex((film) => film.id === id);
       if (filmIndex !== -1) {
         state[filmIndex].amount += 1;

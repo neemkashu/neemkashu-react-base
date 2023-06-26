@@ -11,3 +11,21 @@
   align-items: center;
   background-color: var(--gray-1);
 }
+.cart {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+.cart-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  width: 28px;
+  height: 28px;
+  font-size: 14px;
+  border-radius: 8px;
+  background-color: var(--color-accent);
+}
