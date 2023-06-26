@@ -3,9 +3,12 @@
 import { FC } from "react";
 import { useGetFilmsQuery } from "../../../redux/films/filmApi";
 import { FilmCard } from "../FilmCardShort/FilmCardShort";
+import { useAppDispatch } from "../../../redux/hooks";
+import { addInitialList } from "../../../redux/filters/filtersSlice";
+import { useFilteredMovies } from "../Filters/hooks/hooks";
 
 export const FilmList: FC = () => {
-  const { data, isLoading } = useGetFilmsQuery();
+  const { data, isLoading } = useFilteredMovies();
   console.log("data", data);
 
   if (isLoading) return <span>Loading</span>;
