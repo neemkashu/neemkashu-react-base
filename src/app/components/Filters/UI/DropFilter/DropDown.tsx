@@ -6,6 +6,9 @@ import classNames from "classnames";
 import { DropButton } from "../../../DropButton/DropButton";
 import { RadioList } from "./RadioList/RadioList";
 import { useDropDownContext } from "./DropFilter";
+import { useAppDispatch } from "../../../../../redux/hooks";
+import { updateGenre } from "../../../../../redux/filters/filtersSlice";
+import { Dictionary } from "../../../../../dictionary/dictionary";
 
 export const DropDown: FC = () => {
   const { chosenValue, setChosenValue, name } = useDropDownContext();
@@ -13,6 +16,7 @@ export const DropDown: FC = () => {
   const defaultValue = `Выберете ${name.toLowerCase()}`;
   const uncheckValue = "Не выбран";
   const [isOpen, setIsOpen] = useState(false);
+  const dispatch = useAppDispatch();
 
   return (
     <>
@@ -40,6 +44,7 @@ export const DropDown: FC = () => {
       {isOpen ? (
         <RadioList
           handler={(newValue: string) => {
+            dispatch(updateGenre(newValue === uncheckValue ? "" : newValue));
             setChosenValue && setChosenValue(newValue);
           }}
         />

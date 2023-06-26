@@ -2,21 +2,26 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { FilmResponse } from "../films/filmApi";
 
 interface FilterSliceState {
-  filteredFilmList: FilmResponse[];
+  genre: string;
+  cinema: string;
 }
 
 const initialState: FilterSliceState = {
-  filteredFilmList: [],
+  genre: "",
+  cinema: "",
 };
 
 export const filterSlice = createSlice({
-  name: "filteredList",
+  name: "filters",
   initialState,
   reducers: {
-    addInitialList(state, action: PayloadAction<FilmResponse[]>) {
-      state.filteredFilmList = action.payload;
+    updateGenre(state, action: PayloadAction<string>) {
+      state.genre = action.payload;
+    },
+    updateCinema(state, action: PayloadAction<string>) {
+      state.cinema = action.payload;
     },
   },
 });
 
-export const { addInitialList } = filterSlice.actions;
+export const { updateCinema, updateGenre } = filterSlice.actions;
