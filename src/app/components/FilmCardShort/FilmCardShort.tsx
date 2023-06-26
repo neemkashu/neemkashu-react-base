@@ -3,6 +3,7 @@ import Image from "next/image";
 import styles from "./style.module.css";
 import { CountController } from "../CountController/CountController";
 import { FilmResponse } from "../../../redux/films/filmApi";
+import Link from "next/link";
 
 export const FilmCard: FC<
   Pick<FilmResponse, "title" | "genre" | "posterUrl" | "id">
@@ -11,7 +12,9 @@ export const FilmCard: FC<
     <div className={styles.wrapper}>
       <Image src={image} alt="" width={100} height={150} />
       <div className={styles.info}>
-        <span className={styles.title}>{title}</span>
+        <Link href={`/${id}`}>
+          <span className={styles.title}>{title}</span>
+        </Link>
         <span className={styles.genre}>{genre}</span>
       </div>
       <CountController filmId={id} />

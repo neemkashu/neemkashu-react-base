@@ -1,4 +1,8 @@
+"use client";
+
+import { filmApi } from "../../redux/films/filmApi";
 import { FilmCard } from "../components/FilmCard/FilmCard";
+import styles from "./style.module.css";
 
 type FilmPageProps = {
   params: { id: string };
@@ -39,5 +43,12 @@ const PageMock = {
 };
 
 export default function FilmPage({ params: { id } }: FilmPageProps) {
-  return <FilmCard {...PageMock}></FilmCard>;
+  const { currentData: films } = filmApi.endpoints.getFilms.useQueryState();
+  const film = films?.find((film) => film.id === id);
+  if (!film) return <p className={styles.wrapper}>Похоже, такого фильма нет</p>;
+  return (
+    <FilmCard
+      {...{ details: { ...film }, comments: PageMock.comments }}
+    ></FilmCard>
+  );
 }
