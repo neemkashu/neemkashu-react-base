@@ -4,11 +4,13 @@ import { FC } from "react";
 import styles from "./style.module.css";
 import { FilmCard } from "../../FilmCardShort/FilmCardShort";
 import { useCartFilms } from "./hooks";
+import { useAppSelector } from "../../../../redux/hooks";
+import { TotalCart } from "./TotalCart/TotalCart";
 
 export const Cart: FC = () => {
   const films = useCartFilms();
   return (
-    <div>
+    <div className={styles.cart}>
       <div className={styles.list}>
         {films
           .filter(({ film }) => film)
@@ -26,7 +28,7 @@ export const Cart: FC = () => {
             );
           })}
       </div>
-      <p>Итого</p>
+      <TotalCart />
     </div>
   );
 };

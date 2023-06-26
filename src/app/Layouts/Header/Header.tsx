@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useAppSelector } from "../../../redux/hooks";
 import { useGetFilmsQuery } from "../../../redux/films/filmApi";
+import { TotalAmountSelector } from "../../../redux/selectors";
 
 const BACKET_ALT = "перейти к корзине";
 const LINKS = {
@@ -16,9 +17,7 @@ const LINKS = {
 export const Header: FC = () => {
   // TODO: start films query in separate wrapper
   const { data } = useGetFilmsQuery();
-  const totalFilmInCart = useAppSelector((store) =>
-    store.cart.reduce((accum, item) => (accum += item.amount), 0)
-  );
+  const totalFilmInCart = useAppSelector(TotalAmountSelector);
   return (
     <header className={styles.header}>
       <Link href={LINKS.main}>

@@ -2,9 +2,10 @@ import { FilmResponse, filmApi } from "./films/filmApi";
 import { RootState } from "./types";
 
 type SearchSelector = (state: RootState) => string;
-type CartFilmsSelector = (
-  state: RootState
-) => ({ film: FilmResponse | null } & { amount: number })[];
+type TotalAmountSelector = (state: RootState) => number;
 
 export const selectSearchText: SearchSelector = (state) =>
   state.search.searchText;
+
+export const TotalAmountSelector: TotalAmountSelector = (state) =>
+  state.cart.reduce((accum, item) => (accum += item.amount), 0);
