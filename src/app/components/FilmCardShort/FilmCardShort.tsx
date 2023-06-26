@@ -2,14 +2,11 @@ import { FC } from "react";
 import Image from "next/image";
 import styles from "./style.module.css";
 import { CountController } from "../CountController/CountController";
+import { FilmResponse } from "../../../redux/films/filmApi";
 
-type FilmProps = {
-  title: string;
-  genre: string;
-  image: string;
-};
-
-export const FilmCard: FC<FilmProps> = ({ title, genre, image }) => {
+export const FilmCard: FC<
+  Pick<FilmResponse, "title" | "genre" | "posterUrl" | "id">
+> = ({ title, genre, posterUrl: image, id }) => {
   return (
     <div className={styles.wrapper}>
       <Image src={image} alt="" width={100} height={150} />
@@ -17,7 +14,7 @@ export const FilmCard: FC<FilmProps> = ({ title, genre, image }) => {
         <span className={styles.title}>{title}</span>
         <span className={styles.genre}>{genre}</span>
       </div>
-      <CountController />
+      <CountController filmId={id} />
     </div>
   );
 };

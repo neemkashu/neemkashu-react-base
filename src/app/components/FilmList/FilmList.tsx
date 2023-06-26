@@ -15,7 +15,13 @@ export const FilmList: FC = () => {
   return (
     <>
       {data.map(({ title, genre, posterUrl, id }) => (
-        <FilmCard key={id} title={title} image={posterUrl} genre={genre} />
+        <FilmCard
+          key={id}
+          id={id}
+          title={title}
+          posterUrl={posterUrl}
+          genre={genre}
+        />
       ))}
     </>
   );

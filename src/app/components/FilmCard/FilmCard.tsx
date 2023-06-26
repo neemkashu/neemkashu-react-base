@@ -2,6 +2,7 @@ import { FC } from "react";
 import styles from "./style.module.css";
 import { FilmInfo } from "./FilmInfo/FilmInfo";
 import { Comment } from "./Comment/Comment";
+import { FilmResponse } from "../../../redux/films/filmApi";
 
 type CommentType = {
   id: string;
@@ -12,15 +13,7 @@ type CommentType = {
 };
 
 type FilmProps = {
-  details: {
-    title: string;
-    genre: string;
-    image: string;
-    year: string;
-    rating: string;
-    director: string;
-    description: string;
-  };
+  details: FilmResponse;
   comments: CommentType[];
 };
 
