@@ -1,0 +1,8 @@
+.button-cross {
+  width: 20px;
+  height: 20px;
+  background-color: var(--color-light);
+}
+.button-cross:hover {
+  cursor: pointer;
+}

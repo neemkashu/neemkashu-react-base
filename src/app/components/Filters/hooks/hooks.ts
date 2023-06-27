@@ -1,9 +1,5 @@
 import { Dictionary } from "../../../../dictionary/dictionary";
-import {
-  filmApi,
-  useGetFilmsQuery,
-  useGetMoviesOfCinemaQuery,
-} from "../../../../redux/films/filmApi";
+import { filmApi, useGetFilmsQuery } from "../../../../redux/films/filmApi";
 import { useAppSelector } from "../../../../redux/hooks";
 import { selectSearchText } from "../../../../redux/selectors";
 

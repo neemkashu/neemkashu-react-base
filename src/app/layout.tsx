@@ -25,7 +25,7 @@ export default function RootLayout({
           <Header />
           <Wrapper>{children}</Wrapper>
           <Footer />
-          <div className="modal-layer-element" id={MODAL_LAYER_ID} />
+          <div className={MODAL_LAYER_ID} id={MODAL_LAYER_ID} />
         </Providers>
       </body>
     </html>
