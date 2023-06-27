@@ -5,6 +5,7 @@ import { TotalAmountSelector } from "../../../../../redux/selectors";
 
 export const TotalCart: FC = () => {
   const amount = useAppSelector(TotalAmountSelector);
+  if (amount < 1) return null;
   return (
     <div className={styles.wrapper}>
       <span>Итого билетов:</span>

@@ -7,5 +7,7 @@ type TotalAmountSelector = (state: RootState) => number;
 export const selectSearchText: SearchSelector = (state) =>
   state.search.searchText;
 
-export const TotalAmountSelector: TotalAmountSelector = (state) =>
-  state.cart.reduce((accum, item) => (accum += item.amount), 0);
+export const TotalAmountSelector: TotalAmountSelector = (state) => {
+  if (!state.cart || !state.cart?.length) return 0;
+  return state.cart.reduce((accum, item) => (accum += item.amount), 0);
+};

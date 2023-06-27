@@ -28,7 +28,14 @@ export const cartSlice = createSlice({
         state.splice(filmIndex, 1);
       }
     },
+    removeFilmById(state, action: PayloadAction<string>) {
+      const id = action.payload;
+      const filmIndex = state.findIndex((film) => film.id === id);
+      if (filmIndex === -1) return;
+      state[filmIndex].amount = 0;
+    },
   },
 });
 
-export const { increaseFilmById, decreaseFilmById } = cartSlice.actions;
+export const { increaseFilmById, decreaseFilmById, removeFilmById } =
+  cartSlice.actions;
