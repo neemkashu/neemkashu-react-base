@@ -8,9 +8,12 @@ import { DropButton } from "../../../DropButton/DropButton";
 export const Question: FC<QuestionProps> = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className={styles.question}>
-      <p>{question}</p>
-      <DropButton handler={() => setIsOpen(!isOpen)} />
+    <div className={styles.qa}>
+      <div className={styles.question}>
+        <p>{question}</p>
+        <DropButton handler={() => setIsOpen(!isOpen)} />
+      </div>
+      {isOpen ? <p>{answer}</p> : null}
     </div>
   );
 };
