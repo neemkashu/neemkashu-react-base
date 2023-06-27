@@ -5,6 +5,5 @@ type FilmPageProps = {
 };
 
 export default function FilmPage({ params: { id } }: FilmPageProps) {
-  console.log("id in film page", id);
   return <FilmById id={id} />;
 }
