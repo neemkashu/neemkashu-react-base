@@ -1,4 +1,5 @@
 import { Providers } from "../redux/providers/providers";
+import { MODAL_LAYER_ID } from "../utils/constants";
 import { Footer } from "./Layouts/Footer/Footer";
 import { Header } from "./Layouts/Header/Header";
 import { Wrapper } from "./components/containers/Wrapper/Wrapper";
@@ -24,6 +25,7 @@ export default function RootLayout({
           <Header />
           <Wrapper>{children}</Wrapper>
           <Footer />
+          <div className="modal-layer-element" id={MODAL_LAYER_ID} />
         </Providers>
       </body>
     </html>

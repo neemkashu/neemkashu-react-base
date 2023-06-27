@@ -59,3 +59,8 @@ ul {
 button {
   border: 0;
 }
+.modal-layer-element {
+  position: absolute;
+  top: 0;
+  left: 0;
+}

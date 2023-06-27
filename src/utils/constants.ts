@@ -37,3 +37,5 @@ export const FilterFields = {
 export const MAX_TICKET_AMOUNT = 30;
 export const MIN_TICKET_AMOUNT = 0;
 export const DEFAULT_TICKET_AMOUNT = 0;
+
+export const MODAL_LAYER_ID = "#modal-layler-id";
