@@ -1,0 +1,30 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 8px;
+  align-self: flex-start;
+}
+
+.button {
+  height: 20px;
+  width: 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-light);
+  background-color: var(--color-accent);
+}
+.button:disabled {
+  background-color: var(--color-disabled);
+}
+
+.amount {
+  font-size: var(--font-size-20);
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: 0px;
+}

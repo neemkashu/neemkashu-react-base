@@ -1,0 +1,12 @@
+.question {
+  font-size: var(--font-size-32);
+  padding: var(--padding-24);
+  color: var(--text-primary);
+  font-weight: 600;
+  background-color: var(--color-light);
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-16);
+}

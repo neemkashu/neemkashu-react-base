@@ -1,0 +1,12 @@
+.main {
+  flex-grow: 2;
+  display: flex;
+  flex-direction: row;
+  gap: var(--gap-24);
+}
+.list {
+  flex-grow: 2;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-24);
+}

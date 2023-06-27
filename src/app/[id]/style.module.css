@@ -1,0 +1,9 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: var(--gap-24);
+  font-size: var(--font-size-20);
+  padding: var(--widget-padding);
+  background-color: var(--color-light);
+}

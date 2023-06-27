@@ -1,0 +1,25 @@
+.filter {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.label {
+  font-size: var(--font-size-14);
+  line-height: 20px;
+}
+.input {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--gray-3);
+  background: var(--color-light);
+  outline-width: 0;
+}
+.input:focus-visible {
+  border-color: var(--color-accent);
+}
+.relative {
+  position: absolute;
+  right: 16px;
+  bottom: 5px;
+}

@@ -1,0 +1,11 @@
+.button {
+  height: var(--icon-height);
+  background-color: transparent;
+  transition: transform 0.2s ease-in-out;
+}
+.button:hover {
+  cursor: pointer;
+}
+.button__active {
+  transform: rotate(180deg);
+}

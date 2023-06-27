@@ -1,0 +1,7 @@
+.wrapper {
+  flex-grow: 2;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-24);
+  padding: var(--widget-padding);
+}

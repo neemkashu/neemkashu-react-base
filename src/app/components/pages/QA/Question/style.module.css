@@ -1,0 +1,17 @@
+.question {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: var(--gap-16);
+  padding: var(--padding-24);
+  font-size: var(--font-size-24);
+  background-color: var(--color-light);
+}
+.qa {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-16);
+  padding: var(--padding-24);
+  font-size: var(--font-size-20);
+  background-color: var(--color-light);
+}
