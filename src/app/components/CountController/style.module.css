@@ -18,6 +18,9 @@
   color: var(--color-light);
   background-color: var(--color-accent);
 }
+.button:disabled {
+  background-color: var(--color-disabled);
+}
 
 .amount {
   font-size: var(--font-size-20);

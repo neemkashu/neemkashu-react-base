@@ -7,6 +7,11 @@ import {
   decreaseFilmById,
   increaseFilmById,
 } from "../../../redux/cart/cartSlice";
+import {
+  DEFAULT_TICKET_AMOUNT,
+  MAX_TICKET_AMOUNT,
+  MIN_TICKET_AMOUNT,
+} from "../../../utils/constants";
 
 export const CountController: FC<{ filmId: string }> = ({ filmId }) => {
   const amount = useAppSelector(
@@ -21,11 +26,19 @@ export const CountController: FC<{ filmId: string }> = ({ filmId }) => {
   };
   return (
     <div className={styles.wrapper}>
-      <button onClick={decrease} className={styles.button}>
+      <button
+        disabled={(amount ?? DEFAULT_TICKET_AMOUNT) <= MIN_TICKET_AMOUNT}
+        onClick={decrease}
+        className={styles.button}
+      >
         -
       </button>
-      <span className={styles.amount}>{amount ?? 0}</span>
-      <button onClick={increase} className={styles.button}>
+      <span className={styles.amount}>{amount ?? DEFAULT_TICKET_AMOUNT}</span>
+      <button
+        disabled={(amount ?? DEFAULT_TICKET_AMOUNT) >= MAX_TICKET_AMOUNT}
+        onClick={increase}
+        className={styles.button}
+      >
         +
       </button>
     </div>

@@ -1,6 +1,6 @@
 :root {
   --font-size-32: 3.2rem;
-  --font-size-20: 2.0rem;
+  --font-size-20: 2rem;
   --font-size-24: 2.4rem;
   --font-size-16: 1.6rem;
   --font-size-14: 1.4rem;
@@ -19,6 +19,7 @@
   --gray-3: #e1e3e6;
   --text-primary: #1b1f23;
   --color-accent: #ff5500;
+  --color-disabled: #f8ad88;
 }
 
 * {
