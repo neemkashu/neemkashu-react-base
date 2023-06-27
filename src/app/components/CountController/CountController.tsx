@@ -25,7 +25,6 @@ export const CountController: FC<{ filmId: string }> = ({ filmId }) => {
   );
   const path = usePathname();
   const notify = path === "/cart";
-  console.log("notify", notify);
 
   const { isModalVisible, modal, setIsModalVisible } =
     useModalNotification(filmId);
@@ -34,8 +33,6 @@ export const CountController: FC<{ filmId: string }> = ({ filmId }) => {
     dispatch(increaseFilmById({ id: filmId }));
   };
   const decrease = () => {
-    console.log("amount", amount);
-
     if (amount === 1) {
       setIsModalVisible(true);
     } else {
