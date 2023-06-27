@@ -17,7 +17,7 @@ export const useCardModal = (): {
 
   return {
     button: (
-      <ButtonCross onClick={handleDetails}>
+      <ButtonCross typage={"cross"} onClick={handleDetails}>
         <Image
           alt="удалить из корзины"
           src={"./cross.svg"}

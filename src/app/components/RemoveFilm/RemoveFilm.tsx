@@ -29,8 +29,16 @@ export const RemoveFilm: FC<{ id: string }> = ({ id }) => {
 
   const modal = (
     <ModalCard onClose={modalHandler}>
-      <ButtonCross onClick={handlerYes}>Да</ButtonCross>
-      <ButtonCross onClick={handlerNo}>Нет</ButtonCross>
+      <ButtonCross
+        typage={"yes"}
+        className={styles.button}
+        onClick={handlerYes}
+      >
+        Да
+      </ButtonCross>
+      <ButtonCross typage={"no"} onClick={handlerNo}>
+        Нет
+      </ButtonCross>
     </ModalCard>
   );
   return (

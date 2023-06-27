@@ -21,7 +21,7 @@ export const ModalCard: FC<{ onClose: () => void } & PropsWithChildren> = ({
       >
         <div className={styles["top-line"]}>
           <h3>Удаление билета</h3>
-          <ButtonCross onClick={onClose}>
+          <ButtonCross typage={"cross"} onClick={onClose}>
             <Image
               alt={"закрыть окно"}
               src={"/cross.svg"}
